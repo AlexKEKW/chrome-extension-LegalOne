@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preenchedor Automático</title>
-    <script src="popup.js"></script>
+    <script src="popup.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+
 
     <style>
         body {
@@ -15,37 +18,66 @@
             /* Defina a altura desejada */
             padding: 10px;
         }
-
-        .campos button:not(#botaoAdicionarTipo) {
+        select {
+            cursor: pointer;
+        }
+        
+        .campos button, select{
+            margin: 5px;
+        }
+        .main-div {
             display: flex;
-            flex-wrap: wrap;
-            margin-top: 5px;
-            margin: 10px;
+            align-items: center;
+        }
+        code {
+            background-color: rgb(185, 185, 185);
+            color: #000000;
+            border-radius: 5px;
+        }
+        footer {
+            margin-top: 40px;
+            width: 70%;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewport="0 0 32 32" xmlns:xlink="http://www.w3.org/1999/xlink"><text x="0" y="24" font-size="24" font-family="Arial" fill="black">👋</text></svg>'), auto;
         }
     </style>
 </head>
 
 <body>
-    <div>
+    <div class="main-div">
         <img src="logoMSM.jpeg" alt="">
         <h1>MSM Consultoria e Treinamento</h1>
     </div>
 
     <div class="campos">
-        <button id="botaoPreencherCampos">Preencher Campos</button>
-        <button id="botaoApagarCampos">Deletar Campos</button>
-        <button id="botaoLerCampoTipo">Ler campo "Tipo"</button>
+        <button class="btn btn-outline-primary btn-sm" id="botaoPreencherCampos">Preencher Campos</button>
+        <button class="btn btn-outline-primary btn-sm" id="botaoApagarCampos">Deletar Campos</button>
+        <button class="btn btn-outline-primary btn-sm" id="botaoLerCampoTipo">Ler campo "Tipo"</button>
         <!-- <input type="text" id="inputTipoPopup" placeholder="Digite o tipo">  -->
-        <select name="tipos" class="selecionarTipo" id="selecionarTipo">
+        <select name="tipos" class="form-select" id="selecionarTipo">
+            <option value="" selected>Escolha o Tipo</option>
+            <option value="">---------------</option>
+            <option value="Audiência">Audiência</option>
             <option value="Diversos">Diversos</option>
+            <option value="Pesquisa/Estudos">Pesquisa/Estudos</option>
             <option value="Prazo">Prazo</option>
+            <option value="Prazo IB">Prazo IB</option>
+            <option value="Publicação">Publicação</option>
+            <option value="Reunião">Reunião</option>
+            <option value="Revisão">Revisão</option>
             <option value="Serviço">Serviço</option>
+            <option value="Workflow">Workflow</option>  
+            <option value="Workflow - Elaboração de prazo">Workflow - Elaboração de prazo</option>  
         </select>
 
-        <button id="botaoAdicionarTipo">enviar tipo</button>
+        <button class="btn btn-outline-primary btn-sm" id="botaoAdicionarTipo">enviar tipo</button>
 
-        <button id="botaoPreencherCamposComValorTipo">Preencher outros campos com base no valor do campo "Tipo"</button>
+        <button class="btn btn-outline-primary btn-sm" id="botaoPreencherCamposComValorTipo">Preencher outros campos com base no valor do campo "Tipo"</button>
     </div>
+
+    <footer>
+        <em>Developed by</em>: <code>alex@msmconsult.com.br (beta version)</code>
+    </footer>
+
 </body>
 
 </html>

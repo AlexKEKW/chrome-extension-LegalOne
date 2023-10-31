@@ -126,6 +126,13 @@ function lerCampoTipo() { // ler o campo "Tipo" de acordo com o ID
 
 function preencherCamposComValorDoTipo() { // preencher outros campos com base no valor do campo "Tipo"
 
+  const escritorioOrigem = document.getElementById('SourceOfficeText')
+  const escritorioResponsavel = document.getElementById('ResponsibleOfficeText')
+  const descricao = document.getElementById('Descricao')
+  const status = document.getElementById('StatusText')
+  const local = document.getElementById('Local')
+  const centroDeCusto = document.getElementById('AreaText')
+
   const camposParaPreencher = ['ResponsibleOfficeText', 'SourceOfficeText', 'Descricao', 'StatusText', 'DeadlineCount', 'DeadlineCountText', 'Local', 'AreaText']
 
   const campoTipo = document.getElementById('TipoText').value;
@@ -144,40 +151,77 @@ function preencherCamposComValorDoTipo() { // preencher outros campos com base n
   //   })
   // }
   switch (campoTipo) {
+    case 'Audiência':
+      // camposParaPreencher.forEach(function (fieldId) {
+      //   const inputField = document.getElementById(fieldId);
+      //   if (inputField) {
+      //     inputField.value = 'Preenchendo campos com tipo Audiência';
+      //   }
+      // });
+      escritorioOrigem.value = 'Escritório MSM Consultoria e Treinamento';
+      escritorioResponsavel.value = 'MSM Consultoria e Treinamento';
+      descricao.value = 'Juntada Guia Custas';
+      status.value = 'Iniciado';
+      local.value = 'Local Xique-xique - Bahia';
+      centroDeCusto.value = 'MSM';
+      break;
+
     case 'Diversos':
-      camposParaPreencher.forEach(function (fieldId) {
-        const inputField = document.getElementById(fieldId);
-        if (inputField) {
-          inputField.value = 'Preenchendo campos com tipo Diversos';
-        }
-      });
+      // camposParaPreencher.forEach(function (fieldId) {
+      //   const inputField = document.getElementById(fieldId);
+      //   if (inputField) {
+      //     inputField.value = 'Preenchendo campos com tipo Diversos';
+      //   }
+      // });
+      escritorioOrigem.value = 'Escritório MSM Consult';
+      escritorioResponsavel.value = 'MSM Consultoria e  2';
+      descricao.value = 'Entregar a análise do contrato ao cliente.';
+      status.value = 'Iniciado';
+      local.value = 'Local Santo Amaro';
+      centroDeCusto.value = 'MSM 2';
+      break;
+
+    case 'Pesquisas/Estudos':
+
       break;
 
     case 'Prazo':
-      camposParaPreencher.forEach(function (fieldId) {
-        const inputField = document.getElementById(fieldId);
-        if (inputField) {
-          inputField.value = 'Preenchendo campos com tipo Prazo';
-        }
-      });
+      // camposParaPreencher.forEach(function (fieldId) {
+      //   const inputField = document.getElementById(fieldId);
+      //   if (inputField) {
+      //     inputField.value = 'Preenchendo campos com tipo Prazo';
+      //   }
+      // });
+      escritorioOrigem.value = 'Escritório MSM Consultoria';
+      escritorioResponsavel.value = 'MSM Consultoria e Treinamento 3';
+      descricao.value = 'Cobrar contrato';
+      status.value = 'Iniciado';
+      local.value = 'Local Janga';
+      centroDeCusto.value = 'MSM 3';
       break;
+
+    case 'Prazo IB':
+
+      break;
+
+    case 'Publicação':
+
+      break;
+
 
     case 'Serviço':
-      camposParaPreencher.forEach(function (fieldId) {
-        const inputField = document.getElementById(fieldId);
-        if (inputField) {
-          inputField.value = 'Preenchendo campos com tipo Serviço';
-        }
-      });
-      break;
-
-    case 'Audiência':
-      camposParaPreencher.forEach(function (fieldId) {
-        const inputField = document.getElementById(fieldId);
-        if (inputField) {
-          inputField.value = 'Preenchendo campos com tipo Audiência';
-        }
-      });
+      // camposParaPreencher.forEach(function (fieldId) {
+      //   const inputField = document.getElementById(fieldId);
+      //   if (inputField) {
+      //     inputField.value = 'Preenchendo campos com tipo Serviço';
+      //   }
+      // });
+      escritorioOrigem.value = 'Escritório MSM Consultoria e Treinamento';
+      escritorioResponsavel.value = 'MSM Consultoria e Treinamento 4';
+      descricao.value = 'Fazer contato com o cliente envolvido para tratar da renovação do seu contrato de honorário conosco.';
+      status.value = 'Iniciado';
+      local.value = 'Local Maria Farinha';
+      centroDeCusto.value = 'MSM 4';
       break;
 
     default:
