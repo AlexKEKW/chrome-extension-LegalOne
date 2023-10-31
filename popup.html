@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preenchedor Automático</title>
+    <script src="popup.js"></script>
+
+    <style>
+        body {
+            width: 300px;
+            /* Defina a largura desejada */
+            height: 400px;
+            /* Defina a altura desejada */
+            padding: 10px;
+        }
+
+        .campos button:not(#botaoAdicionarTipo) {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 5px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="logoMSM.jpeg" alt="">
+        <h1>MSM Consultoria e Treinamento</h1>
+    </div>
+
+    <div class="campos">
+        <button id="botaoPreencherCampos">Preencher Campos</button>
+        <button id="botaoApagarCampos">Deletar Campos</button>
+        <button id="botaoLerCampoTipo">Ler campo "Tipo"</button>
+        <!-- <input type="text" id="inputTipoPopup" placeholder="Digite o tipo">  -->
+        <select name="tipos" class="selecionarTipo" id="selecionarTipo">
+            <option value="Diversos">Diversos</option>
+            <option value="Prazo">Prazo</option>
+            <option value="Serviço">Serviço</option>
+        </select>
+
+        <button id="botaoAdicionarTipo">enviar tipo</button>
+
+        <button id="botaoPreencherCamposComValorTipo">Preencher outros campos com base no valor do campo "Tipo"</button>
+    </div>
+</body>
+
+</html>
